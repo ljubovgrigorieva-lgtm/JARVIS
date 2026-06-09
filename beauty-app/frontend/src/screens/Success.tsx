@@ -21,7 +21,11 @@ export function Success() {
     setMainButton('На главную', () => navigate('/'))
   }, [navigate])
 
-  if (!state) { navigate('/'); return null }
+  useEffect(() => {
+    if (!state) navigate('/')
+  }, [state, navigate])
+
+  if (!state) return null
 
   const { booking } = state
   const dateLabel = new Date(booking.booking_date).toLocaleDateString('ru-RU', {
