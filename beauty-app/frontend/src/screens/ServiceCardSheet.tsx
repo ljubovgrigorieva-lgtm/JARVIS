@@ -1,16 +1,52 @@
+import { useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { PortfolioItem } from '../lib/api.ts'
+import { BottomSheet } from '../components/BottomSheet.tsx'
+import { setMainButton, showBackButton, hapticLight, enableClosingConfirmation } from '../lib/telegram.ts'
+import styles from './ServiceCardSheet.module.css'
 
 interface Props {
   item: PortfolioItem
   onClose: () => void
 }
 
-export function ServiceCardSheet({ onClose }: Props) {
+export function ServiceCardSheet({ item, onClose }: Props) {
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    hapticLight()
+    showBackButton(onClose)
+    enableClosingConfirmation()
+    setMainButton('Хочу так же', () => {
+      navigate('/book', {
+        state: {
+          serviceId: item.service_id,
+          serviceName: item.service_name,
+          servicePrice: item.service_price_from,
+          serviceDuration: item.service_duration_minutes
+        }
+      })
+    })
+  }, [item, navigate, onClose])
+
   return (
-    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 200 }} onClick={onClose}>
-      <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: '#fff', padding: 16, borderRadius: '16px 16px 0 0' }}>
-        Service Card (placeholder)
+    <BottomSheet open onClose={onClose}>
+      <img
+        src={item.image_url}
+        alt={item.service_name}
+        className={styles.photo}
+      />
+      <div className={styles.body}>
+        <h2 className={styles.title}>{item.service_name}</h2>
+        <div className={styles.meta}>
+          <span className={styles.price}>от {item.service_price_from} ₽</span>
+          <span className={styles.dot}>·</span>
+          <span className={styles.duration}>⏱ {item.service_duration_minutes} мин</span>
+        </div>
+        {item.service_description && (
+          <p className={styles.description}>{item.service_description}</p>
+        )}
       </div>
-    </div>
+    </BottomSheet>
   )
 }

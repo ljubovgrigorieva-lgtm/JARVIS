@@ -1,0 +1,26 @@
+.photo {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  display: block;
+}
+
+.body { padding: var(--space-md); }
+
+.title { font-size: 20px; font-weight: 700; color: var(--tg-text); }
+
+.meta {
+  display: flex; align-items: center; gap: 8px;
+  margin-top: 8px;
+}
+
+.price { font-size: 18px; font-weight: 700; color: var(--tg-button); }
+
+.dot { color: var(--tg-hint); }
+
+.duration { font-size: 14px; color: var(--tg-hint); }
+
+.description {
+  font-size: 14px; color: var(--tg-hint);
+  line-height: 1.5; margin-top: 10px;
+}
