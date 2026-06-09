@@ -1,0 +1,32 @@
+.card {
+  background: var(--tg-secondary-bg); border-radius: 14px;
+  padding: var(--space-md); margin: 0 var(--space-md) var(--space-sm);
+}
+
+.upcoming { border-left: 3px solid var(--tg-button); }
+.past { opacity: 0.7; }
+
+.top { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; }
+
+.service { font-size: 15px; font-weight: 700; color: var(--tg-text); }
+
+.datetime { font-size: 13px; color: var(--tg-hint); margin-top: 3px; }
+
+.price { font-size: 13px; color: var(--tg-hint); margin-top: 2px; }
+
+.badge {
+  font-size: 11px; font-weight: 600; padding: 3px 8px;
+  border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+}
+
+.badgeUpcoming { background: color-mix(in srgb, var(--tg-button) 15%, transparent); color: var(--tg-button); }
+
+.badgePast { background: var(--tg-secondary-bg); color: var(--tg-hint); }
+
+.bookAgain {
+  width: 100%; margin-top: var(--space-sm);
+  min-height: var(--touch-min);
+  background: color-mix(in srgb, var(--tg-button) 10%, transparent);
+  color: var(--tg-button); border-radius: 10px;
+  font-size: 14px; font-weight: 600;
+}
