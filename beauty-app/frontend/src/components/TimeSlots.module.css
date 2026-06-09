@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  padding: 0 var(--space-md);
+}
+
+.slot {
+  min-height: var(--touch-min);
+  border-radius: 10px;
+  font-size: 14px; font-weight: 500;
+  background: var(--tg-secondary-bg);
+  color: var(--tg-text);
+  transition: background 0.1s;
+}
+
+.slot:not(.taken):not(.selected):hover {
+  background: color-mix(in srgb, var(--tg-button) 15%, transparent);
+}
+
+.slot.selected {
+  background: var(--tg-button);
+  color: var(--tg-button-text);
+}
+
+.slot.taken {
+  color: var(--tg-hint);
+  opacity: 0.5;
+  text-decoration: line-through;
+}
