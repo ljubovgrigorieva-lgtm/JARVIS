@@ -9,7 +9,7 @@
     "seed": "ts-node src/db/seed.ts"
   },
   "dependencies": {
-    "@fastify/cors": "^9.0.0",
+    "@fastify/cors": "^8.0.0",
     "@fastify/static": "^7.0.0",
     "better-sqlite3": "^12.10.0",
     "dotenv": "^16.4.5",
