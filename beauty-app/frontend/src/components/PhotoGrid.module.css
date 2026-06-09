@@ -1,0 +1,26 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--tg-secondary-bg);
+}
+
+.cell {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: var(--tg-secondary-bg);
+  padding: 0;
+  border-radius: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  min-height: unset;
+}
+
+.photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.1s;
+}
+
+.cell:active .photo { transform: scale(0.96); }
