@@ -3,7 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 import { api, TimeSlot } from '../lib/api.ts'
 import { Calendar } from '../components/Calendar.tsx'
 import { TimeSlots } from '../components/TimeSlots.tsx'
-import { setMainButton, showBackButton, enableClosingConfirmation, getTelegramUser, hapticSuccess } from '../lib/telegram.ts'
+import { setMainButton, showBackButton, hideBackButton, hideMainButton, enableClosingConfirmation, disableClosingConfirmation, getTelegramUser, hapticSuccess } from '../lib/telegram.ts'
 import styles from './DateTimePicker.module.css'
 
 interface BookState {
@@ -25,9 +25,15 @@ export function DateTimePicker() {
   const [submitting, setSubmitting] = useState(false)
 
   useEffect(() => {
+    if (!state) return
     enableClosingConfirmation()
     showBackButton(() => navigate(-1))
-  }, [navigate])
+    return () => {
+      disableClosingConfirmation()
+      hideBackButton()
+      hideMainButton()
+    }
+  }, [navigate, state])
 
   useEffect(() => {
     if (!selectedDate || !state?.serviceId) return
@@ -35,6 +41,7 @@ export function DateTimePicker() {
     setLoadingSlots(true)
     api.availability(selectedDate, state.serviceId)
       .then(res => setSlots(res.slots))
+      .catch(() => setSlots([]))
       .finally(() => setLoadingSlots(false))
   }, [selectedDate, state?.serviceId])
 
@@ -51,7 +58,7 @@ export function DateTimePicker() {
             serviceId: state.serviceId,
             date: selectedDate,
             time: selectedTime,
-            firstName: (user as any)?.firstName ?? 'Клиент'
+            firstName: (user as any)?.first_name ?? 'Клиент'
           })
           hapticSuccess()
           navigate('/success', { state: { booking, serviceName: state.serviceName } })
@@ -64,10 +71,11 @@ export function DateTimePicker() {
     )
   }, [selectedDate, selectedTime, submitting, state, navigate])
 
-  if (!state) {
-    navigate('/')
-    return null
-  }
+  useEffect(() => {
+    if (!state) navigate('/')
+  }, [state, navigate])
+
+  if (!state) return null
 
   return (
     <div className={styles.container}>
