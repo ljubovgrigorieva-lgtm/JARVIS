@@ -1,0 +1,34 @@
+:root {
+  --tg-bg: var(--tg-theme-bg-color, #ffffff);
+  --tg-secondary-bg: var(--tg-theme-secondary-bg-color, #f0f0f0);
+  --tg-text: var(--tg-theme-text-color, #000000);
+  --tg-hint: var(--tg-theme-hint-color, #999999);
+  --tg-link: var(--tg-theme-link-color, #2678b6);
+  --tg-button: var(--tg-theme-button-color, #2678b6);
+  --tg-button-text: var(--tg-theme-button-text-color, #ffffff);
+  --tg-header-bg: var(--tg-theme-header-bg-color, #ffffff);
+  --tg-accent: var(--tg-theme-accent-text-color, #2678b6);
+
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+
+  --touch-min: 44px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--tg-bg);
+  color: var(--tg-text);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overscroll-behavior: none;
+}
+
+button {
+  min-height: var(--touch-min);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
