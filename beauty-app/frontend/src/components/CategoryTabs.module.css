@@ -1,0 +1,19 @@
+.scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+.scroll::-webkit-scrollbar { display: none; }
+
+.tabs {
+  display: flex; gap: 8px;
+  padding: var(--space-sm) var(--space-md);
+  width: max-content; min-width: 100%;
+}
+
+.tab {
+  min-height: 36px; padding: 0 16px;
+  border-radius: 20px; font-size: 14px; font-weight: 500;
+  background: var(--tg-secondary-bg); color: var(--tg-hint);
+  white-space: nowrap; transition: all 0.15s;
+}
+
+.tab.active {
+  background: var(--tg-button); color: var(--tg-button-text);
+}

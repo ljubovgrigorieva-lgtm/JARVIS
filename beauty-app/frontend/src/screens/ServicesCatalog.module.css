@@ -1,0 +1,6 @@
+.loading {
+  display: flex; align-items: center; justify-content: center;
+  min-height: 200px; color: var(--tg-hint);
+}
+
+.list { padding-bottom: var(--space-lg); }
