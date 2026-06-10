@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api, Service, ServiceCategory } from '../lib/api.ts'
+import { api } from '../lib/api.ts'
+import type { Service, ServiceCategory } from '../lib/api.ts'
 import { CategoryTabs } from '../components/CategoryTabs.tsx'
 import { ServiceListItem } from '../components/ServiceListItem.tsx'
 import { setMainButton, hideMainButton, hideBackButton } from '../lib/telegram.ts'

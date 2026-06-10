@@ -1,4 +1,4 @@
-import { Service } from '../lib/api.ts'
+import type { Service } from '../lib/api.ts'
 import { hapticLight } from '../lib/telegram.ts'
 import styles from './ServiceListItem.module.css'
 

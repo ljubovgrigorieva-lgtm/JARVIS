@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api, Booking } from '../lib/api.ts'
+import { api } from '../lib/api.ts'
+import type { Booking } from '../lib/api.ts'
 import { BookingCard } from '../components/BookingCard.tsx'
 import { hideMainButton, hideBackButton } from '../lib/telegram.ts'
 import styles from './MyBookings.module.css'

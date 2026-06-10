@@ -1,4 +1,4 @@
-import { PortfolioItem } from '../lib/api.ts'
+import type { PortfolioItem } from '../lib/api.ts'
 import styles from './PhotoGrid.module.css'
 
 interface Props {

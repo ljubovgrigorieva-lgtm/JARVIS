@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { PortfolioItem } from '../lib/api.ts'
+import type { PortfolioItem } from '../lib/api.ts'
 import { BottomSheet } from '../components/BottomSheet.tsx'
 import { setMainButton, showBackButton, hapticLight, enableClosingConfirmation } from '../lib/telegram.ts'
 import styles from './ServiceCardSheet.module.css'

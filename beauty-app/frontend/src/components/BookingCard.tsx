@@ -1,4 +1,4 @@
-import { Booking } from '../lib/api.ts'
+import type { Booking } from '../lib/api.ts'
 import styles from './BookingCard.module.css'
 
 interface Props {

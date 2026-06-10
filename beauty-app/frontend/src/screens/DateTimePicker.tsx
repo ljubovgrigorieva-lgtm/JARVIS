@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { api, TimeSlot } from '../lib/api.ts'
+import { api } from '../lib/api.ts'
+import type { TimeSlot } from '../lib/api.ts'
 import { Calendar } from '../components/Calendar.tsx'
 import { TimeSlots } from '../components/TimeSlots.tsx'
 import { setMainButton, showBackButton, hideBackButton, hideMainButton, enableClosingConfirmation, disableClosingConfirmation, getTelegramUser, hapticSuccess } from '../lib/telegram.ts'

@@ -1,4 +1,4 @@
-import { TimeSlot } from '../lib/api.ts'
+import type { TimeSlot } from '../lib/api.ts'
 import { hapticLight } from '../lib/telegram.ts'
 import styles from './TimeSlots.module.css'
 

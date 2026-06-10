@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { Booking } from '../lib/api.ts'
+import type { Booking } from '../lib/api.ts'
 import { setMainButton, hideBackButton, hapticSuccess, disableClosingConfirmation } from '../lib/telegram.ts'
 import styles from './Success.module.css'
 

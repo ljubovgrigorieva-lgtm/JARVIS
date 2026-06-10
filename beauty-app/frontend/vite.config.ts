@@ -1,5 +1,5 @@
 /// <reference types="vitest" />
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
@@ -20,9 +20,9 @@ export default defineConfig({
     outDir: 'dist',
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom', 'react-router-dom'],
-          telegram: ['@telegram-apps/sdk']
+        manualChunks(id) {
+          if (id.includes('react') || id.includes('react-router-dom')) return 'vendor'
+          if (id.includes('@telegram-apps')) return 'telegram'
         }
       }
     }

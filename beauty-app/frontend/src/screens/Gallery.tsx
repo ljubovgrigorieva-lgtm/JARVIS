@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { api, PortfolioItem } from '../lib/api.ts'
+import { api } from '../lib/api.ts'
+import type { PortfolioItem } from '../lib/api.ts'
 import { MasterHeader } from '../components/MasterHeader.tsx'
 import { PhotoGrid } from '../components/PhotoGrid.tsx'
 import { ServiceCardSheet } from './ServiceCardSheet.tsx'
