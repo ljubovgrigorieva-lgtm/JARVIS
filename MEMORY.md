@@ -22,14 +22,17 @@
 
 1. **Лендинг на Tilda** — сайт онлайн-журнала «Рестарт» по саморазвитию
 2. **Упаковка услуг в соцсетях** — продвижение своих услуг по ИИ-агентам и автоматизации
+3. **Telegram Mini App для бьюти-мастера** — `beauty-app/` в этом репо. Весь код готов (Tasks 1–14), осталось задеплоить на VPS 217.26.30.176. Стек: React 18 + Vite + TypeScript (фронт), Fastify + SQLite + Grammy (бэк). План: `docs/superpowers/plans/2026-06-09-beauty-mini-app.md`. Деплой: `beauty-app/deploy.sh` — нужно создать `.env` с BOT_TOKEN и FRONTEND_URL на VPS, настроить BotFather Menu Button.
 
 ---
 
 ## Инфраструктура
 
-> Сюда дописывайте: серверы (VPS, IP, доступы), домены, базы данных, ключевые шаблоны deploy-команд.
-
-*Пока пусто. Появится когда заведёте свой сервер или домен.*
+- **VPS (Beget):** Ubuntu 24.04, IP: 217.26.30.176, пользователь root
+- **Агент на сервере:** `/home/agent/workspace/` — файлы ДНК; `/home/agent/projects/` — проекты
+- **Telegram-бот:** запущен как systemd-сервис `agent-bot`, токен хранится в `/home/agent/.agent/.env`
+- **Claude Code CLI:** установлен глобально на сервере (`/usr/bin/claude`), требует авторизации через подписку
+- **VS Code Tunnel:** сервис запущен, имя `jarvis-server`, адрес https://vscode.dev/tunnel/jarvis-server
 
 ---
 
