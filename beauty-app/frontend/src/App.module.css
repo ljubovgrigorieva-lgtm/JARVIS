@@ -1,12 +1,12 @@
 .app {
   display: flex;
   flex-direction: column;
-  min-height: 100dvh;
+  min-height: 100vh;
   background: var(--tg-bg);
 }
 
 .main {
   flex: 1;
   overflow-y: auto;
-  padding-bottom: calc(56px + env(safe-area-inset-bottom, 0px));
+  padding-bottom: 72px;
 }
