@@ -17,14 +17,6 @@ export default defineConfig({
     globals: true
   },
   build: {
-    outDir: 'dist',
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('react') || id.includes('react-router-dom')) return 'vendor'
-          if (id.includes('@telegram-apps')) return 'telegram'
-        }
-      }
-    }
+    outDir: 'dist'
   }
 })
