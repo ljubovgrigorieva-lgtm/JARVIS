@@ -27,15 +27,15 @@ function seed() {
   `)
 
   const photos = [
-    { id: 1, image_url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400', service_id: 2, sort_order: 1 },
-    { id: 2, image_url: 'https://images.unsplash.com/photo-1604654894611-df63bc536372?w=400', service_id: 3, sort_order: 2 },
-    { id: 3, image_url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400', service_id: 1, sort_order: 3 },
-    { id: 4, image_url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400', service_id: 2, sort_order: 4 },
-    { id: 5, image_url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400', service_id: 5, sort_order: 5 },
-    { id: 6, image_url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400', service_id: 3, sort_order: 6 },
-    { id: 7, image_url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400', service_id: 2, sort_order: 7 },
-    { id: 8, image_url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400', service_id: 6, sort_order: 8 },
-    { id: 9, image_url: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=400', service_id: 3, sort_order: 9 },
+    { id: 1, image_url: 'https://picsum.photos/seed/nail1/400/400', service_id: 2, sort_order: 1 },
+    { id: 2, image_url: 'https://picsum.photos/seed/nail2/400/400', service_id: 3, sort_order: 2 },
+    { id: 3, image_url: 'https://picsum.photos/seed/nail3/400/400', service_id: 1, sort_order: 3 },
+    { id: 4, image_url: 'https://picsum.photos/seed/nail4/400/400', service_id: 2, sort_order: 4 },
+    { id: 5, image_url: 'https://picsum.photos/seed/nail5/400/400', service_id: 5, sort_order: 5 },
+    { id: 6, image_url: 'https://picsum.photos/seed/nail6/400/400', service_id: 3, sort_order: 6 },
+    { id: 7, image_url: 'https://picsum.photos/seed/nail7/400/400', service_id: 2, sort_order: 7 },
+    { id: 8, image_url: 'https://picsum.photos/seed/nail8/400/400', service_id: 6, sort_order: 8 },
+    { id: 9, image_url: 'https://picsum.photos/seed/nail9/400/400', service_id: 3, sort_order: 9 },
   ]
 
   const seedPhotos = db.transaction(() => {
