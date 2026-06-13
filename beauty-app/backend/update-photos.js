@@ -1,5 +1,5 @@
 // Run: node update-photos.js
-const Database = require('./node_modules/better-sqlite3')
+const Database = require('better-sqlite3')
 const path = require('path')
 
 const dbPath = process.env.DATABASE_PATH || path.join(__dirname, 'data/beauty.db')
